@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class Shooting : WeaponSwitching
 {
     // public Shooting 
     private Camera mainCam; // camera
@@ -46,5 +46,20 @@ public class Shooting : MonoBehaviour
             canFire = false; // The timer resets and starts again immediatley which instantiates a new bullet.
             Instantiate(bullet, bulletTransform.position, Quaternion.identity); // The bullet is duplicated (instantiated) based on the transform position and is given a new sprite intirely.
         }
+
+        // if(currentArrayNum = 0)
+        // {
+        //     timeBetweenFiring = 0.15f;
+        // }
+
+        // if(currentArrayNum = 1)
+        // {
+        //     timeBetweenFiring = 0.2f; 
+        // }
+
+        // if(currentArrayNum = 2)
+        // {
+        //     timeBetweenFiring = 0.5f;
+        // }
     }
 }

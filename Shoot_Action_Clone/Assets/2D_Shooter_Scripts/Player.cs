@@ -76,14 +76,8 @@ public class Player : MonoBehaviour
             input.y = -speed; // Player moves down (-y)
             animController.SetBool("isMoving", true); // When the player is moving the animation controller calls the isMoving animation onto the sprite.
         }
-
-        else
-        {
-            input.y = 0; // if the player doesnt do this, they stay in place 
-            animController.SetBool("isMoving", false); // When the player is not moving the animation controller stops the isMoving animation of the sprite.
-        }
-
-        if(Input.GetKey(KeyCode.A)) // If a is pressed
+        
+        else if(Input.GetKey(KeyCode.A)) // If a is pressed
         {
             input.x = -speed; // player moves towards the left negative x
             playerSpriteRenderer.flipX = true; // Flips the sprite.
@@ -95,9 +89,11 @@ public class Player : MonoBehaviour
             playerSpriteRenderer.flipX = false; // does not flip the sprite.
             animController.SetBool("isMoving", true); // When the player is moving the animation controller calls the isMoving animation onto the sprite.
         }
+
         else
         {
             input.x = 0; // if the player doesnt do this, they stay in place.
+            input.y = 0;
             animController.SetBool("isMoving", false); // isMoving animation stops when player stop smoving.
         }
         
